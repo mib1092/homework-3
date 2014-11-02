@@ -61,7 +61,7 @@ a:hover                        { text-decoration:none; }
 body {
     background:url('images/header_bg.png') repeat-x top center #fff;
 }
-body.inner {
+body.page {
     background:url('images/header_bg.png') repeat-x center -342px  #fff;
 }
 
@@ -105,7 +105,7 @@ body span.line
     overflow:hidden;
     height:450px;
 }
-.inner #header {
+.page #header {
     height:108px;
 }
 
@@ -113,7 +113,6 @@ body span.line
 	position:absolute; top:19px; left:0px;
 	width:167px;
 	height:71px;
-	background:url('images/geekhub_logo.png') no-repeat;
 }
 #header h1 a {
 	display:block;
@@ -237,14 +236,14 @@ body span.line
 /*----------------------------------------------------------------------------------*/
 /*-------------------------------------NAV------------------------------------------*/
 /*----------------------------------------------------------------------------------*/
-.inner #header .nav {
+.page #header .nav {
     height:108px;
     margin:0;
 }
-.inner #header .nav li a {
+.page #header .nav li a {
     padding: 48px 0 44px;
 }
-.inner #header .nav li.active a  {
+.page #header .nav li.current-menu-item a  {
     min-width: 46px;
     text-align: center;
     background:url('images/inner_active.png') center bottom no-repeat;
@@ -270,7 +269,9 @@ body span.line
     color:#396375;
     text-transform:uppercase;
 }
-#header .nav li a.active,#header .nav li.active a,#header .nav li a:hover {
+#header .nav li a.current-menu-item,
+#header .nav li.current-menu-item a,
+#header .nav li a:hover {
     color:#e21d5d;
 }
 #header .links {
@@ -309,7 +310,7 @@ body span.line
     background-position:-128px 10px;
 }
 
-#header .links li a.active,#header .links li.active a,#header .links li a:hover {
+#header .links li a.active,#header .links li.current-menu-item a,#header .links li a:hover {
     background-image:url('images/icons_social_hover.png');
 }
 
@@ -881,6 +882,9 @@ text-indent:-999em;
 #content .contacts dl ul li.tw a:hover {
     background-position: -132px -57px;
 }
+#content .contacts dl .email {
+    font: 700 32px Arial;
+}
 
 /*----------------------------------------------------------------------------------*/
 /*-------------------------------------ABOUT----------------------------------------*/
@@ -927,7 +931,7 @@ text-indent:-999em;
 #content .about > ul .imgs {
     float:left;
     width:274px;
-    height:1000px;
+    height:800px;
     margin:0 28px 0 0;
 }
 #content .about > ul .imgs img {

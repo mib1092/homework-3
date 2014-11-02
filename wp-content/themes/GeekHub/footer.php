@@ -1,13 +1,16 @@
 <ul id="footer">
     <li>
-        <ul class="nav">
-            <li><a href="index.html">Головна</a></li>
-            <li><a href="about.html">Про GeekHub</a></li>
-            <li><a href="team.html">Команда</a></li>
-            <li><a href="contacts.html">Зв'язок</a></li>
-        </ul>
+        <?php wp_nav_menu(array(
+            'theme_location' => 'footer-nav',
+            'menu' => 'Footer Nav',
+            'menu_class' => 'nav',
+            'container' => false
+        )); ?>
     </li>
-    <li>© Copyright 2011</li>
+    <li>
+        &copy; Copyright <? $copyYear = 2011; $curYear = date('Y');
+                            echo $copyYear . (($copyYear != $curYear) ? '-' . $curYear : ''); ?>
+    </li>
 </ul>
 </div>
 <? wp_footer(); ?>
