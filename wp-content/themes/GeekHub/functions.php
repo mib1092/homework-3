@@ -198,7 +198,7 @@ function courses() {
         'public' => true,
         'menu_position' => 5,
         'menu_icon' => 'dashicons-welcome-learn-more',
-        'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+        'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt', 'custom-fields' ),
         'labels' => array(
             'name' => __( 'Our Courses', 'geekhub' ),
             'singular_name' => __( 'Course', 'geekhub' ),
@@ -249,6 +249,36 @@ function lecturers() {
     ));
 }
 add_action( 'init', 'lecturers' );
+
+/**
+* registration new taxonomies for post type "GeekHub team"
+**/
+function create_lecturers_taxonomies(){
+    // Добавляем НЕ древовидную таксономию 'lecturers-courses'
+    register_taxonomy( 'lecturers-courses', array('lecturers'), array(
+        'hierarchical' => false,
+        'labels' => array(
+            'name' => __( "Lecturer's Courses", 'geekhub' ),
+            'singular_name' => __( 'Courses', 'geekhub' ),
+            'search_items' =>  __( 'Search Courses', 'geekhub' ),
+            'all_items' => __( 'All Courses', 'geekhub' ),
+            'parent_item' => null,
+            'parent_item_colon' => null,
+            'edit_item' => __( 'Edit Course', 'geekhub' ),
+            'update_item' => __( 'Update Course', 'geekhub' ),
+            'add_new_item' => __( 'Add New Course', 'geekhub' ),
+            'new_item_name' => __( 'New Course Name', 'geekhub' ),
+            'separate_items_with_commas' => __( 'Separate courses with commas' ),
+            'add_or_remove_items' => __( 'Add or remove courses' ),
+            'choose_from_most_used' => __( 'Choose from the most used courses' ),
+            'menu_name' => __( 'Courses', 'geekhub' ),
+        ),
+        'show_ui' => true,
+        'query_var' => true,
+        'rewrite' => array( 'slug' => 'lecturers-courses' ),
+    ));
+}
+add_action( 'init', 'create_lecturers_taxonomies', 0 );
 
 
 /**

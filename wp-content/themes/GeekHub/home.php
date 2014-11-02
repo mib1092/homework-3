@@ -2,95 +2,26 @@
 
     <div id="content">
         <div class="home">
+
+        <? $courses = new WP_Query(array(
+            'post_type' => 'courses',
+            'posts_per_page' => -1,
+            'orderby' => 'ID',
+            'order' => 'ASC'
+        ));
+        if ( $courses->have_posts()) : ?>
             <h2>ДЕТАЛІ КУРСІВ ТА РЕЄСТРАЦІЯ</h2>
             <ul class="types">
-                <li class="left-col">
-                    <img src="<? bloginfo('template_url'); ?>/images/icon-frontend.png" />
-                    <a class="title" href="#"><h3>Frontend + CMS</h3></a>
-                    <p>Цей курс допоможе вам навчитися створювати веб сайти на основі системи керування контентом. Все, від скінування дизайну до підключення CMS. Цей курс дасть вам чудовий старт для фріланса або роботи в компанії.</p>
-                    <a href="#">Докладніше + реєстрація</a>
-                </li>
+            <? while ( $courses->have_posts() ) : $courses->the_post(); ?>
                 <li>
-                    <img src="<? bloginfo('template_url'); ?>/images/icon-adv-cms.png" />
-                    <a class="title" href="#"><h3>Advanced CMS</h3></a>
-                    <p>Курс для тих, хто хоче навчитися створювати сайти різного рівня складності за допомогою популярних CMS Wordpress та Drupal. Якщо ви хочете робити вебсайти як професіонал, цей курс для вас. Особливості різних CMS, використання та написання плагінів та компонентів, інтеграція із соціальними мережами та сторонніми сервісами.</p>
-                    <a href="#">Докладніше + реєстрація</a>
+                    <? if (has_post_thumbnail() ) { the_post_thumbnail(); } ?>
+                    <a class="title" href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
+                    <? the_excerpt(); ?>
+                    <a href="<?php the_permalink(); ?>">Докладніше + реєстрація</a>
                 </li>
-                <li>
-                    <img src="<? bloginfo('template_url'); ?>/images/icon-adv-php.png" />
-                    <a class="title" href="#"><h3>Advanced PHP</h3></a>
-                    <p>Для тих хто хоче розвивати свої базові навички в PHP. Курс заглиблюється у вивчення ООП, MVC та паттернiв проетування на базі найпопулярнішого php фреймворку Symfony2.</p>
-                    <a href="#">Докладніше + реєстрація</a>
-                </li>
-                <li class="left-col">
-                    <img src="<? bloginfo('template_url'); ?>/images/icon-js.png" />
-                    <a class="title" href="#"><h3>JavaScript</h3></a>
-                    <p>Все найцікавіше відбувається в браузері, а не на сервері. Javascript - це той інструмент який допоможе вам створювати дійсно зручні та швидкі веб сторінки.</p>
-                    <a href="#">Докладніше + реєстрація</a>
-                </li>
-                <li>
-                    <img src="<? bloginfo('template_url'); ?>/images/icon-ios.png" />
-                    <a class="title" href="#"><h3>iOS</h3></a>
-                    <p>Курс для швидкого старту в розробці програмного забезпечення під популярну мобільну платформу iOS. </p>
-                    <a href="#">Докладніше + реєстрація</a>
-                </li>
-                <li>
-                    <img src="<? bloginfo('template_url'); ?>/images/icon-android.png" />
-                    <a class="title" href="#"><h3>Android</h3></a>
-                    <p>Android - найпопулярніша операційна система для смартфонів. В цьому курсі ми охопимо найважливіші елементи побудови додатків для цієї платформи. Ознайомимося з основними компонентами UI та UX. Навчимося їх правильно використовувати. Також навчимося працювати в команді та побудуємо корисні додатки.</p>
-                    <a href="#">Докладніше + реєстрація</a>
-                </li>
-                <li class="left-col">
-                    <img src="<? bloginfo('template_url'); ?>/images/icon-ruby.png" />
-                    <a class="title" href="#"><h3>Ruby on Rails</h3></a>
-                    <p>Курс навчить Вас працювати з популярним фреймворком для розробки веб-сервісів на мові програмування Ruby. </p>
-                    <a href="#">Докладніше + реєстрація</a>
-                </li>
-                <li>
-                    <img src="<? bloginfo('template_url'); ?>/images/icon-grails.png" />
-                    <a class="title" href="#"><h3>Groovy & Grails</h3></a>
-                    <p>Познайомтесь з одним з найпотужніших фреймворків для швидкої розробки веб-додатків Groovy & Grails.</p>
-                    <a href="#">Докладніше + реєстрація</a>
-                </li>
-                <li>
-                    <img src="<? bloginfo('template_url'); ?>/images/icon-java.png" />
-                    <a class="title" href="#"><h3>Java for Web</h3></a>
-                    <p>Java - це основа ентерпрайз технологій. Ви ознайомитесь із мовою, основними классами і пакетами, а також найбільш популярними та потужними фреймворками для розробки веб-додатків.</p>
-                    <a href="#">Докладніше + реєстрація</a>
-                </li>
-                <li class="left-col">
-                    <img src="<? bloginfo('template_url'); ?>/images/icon-pm.png" />
-                    <a class="title" href="#"><h3>Project Management</h3></a>
-                    <p>Щоб стати досвідченим менеджером проектів потрібні роки спроб та помилок. Geekhub дає вам можливість почати набувати практичні навички вже зараз.</p>
-                    <a href="#">Докладніше + реєстрація</a>
-                </li>
-                <li>
-                    <img src="<? bloginfo('template_url'); ?>/images/icon-qa.png" />
-                    <a class="title" href="#"><h3>Quality Assurance</h3></a>
-                    <p>Курс для тих, хто вміє конструктивно критикувати та хотів би з цього навику зробити цікаву інноваційну професію.</p>
-                    <a href="#">Докладніше + реєстрація</a>
-                </li>
-                <li>
-                    <img src="<? bloginfo('template_url'); ?>/images/icon-english.png" />
-                    <a class="title" href="#"><h3>Business English</h3></a>
-                    <p>Якщо ви лідер команди або менеджер проектів, Business English допоможе вам здобути корисні інструменти для ефективних комунікацій як всередині команди так і з клієнтами.</p>
-                    <a href="#">Докладніше + реєстрація</a>
-                </li>
-                <li>
-                    <img src="<? bloginfo('template_url'); ?>/images/icon-webdesign.png" />
-                    <a class="title" href="#"><h3>Web & Mobile Design</h3></a>
-                    <p>Це динамічний та насиченний навчальний курс, який дає змогу отримати базові знання з Веб дизайну та дизайну мобільних додатків. Ви дізнаєтесь як проектувати інтерфейси та робити сайти зручними для відвідувачів. Отримаєте базові знання по композиції, фірмовому стилю, шрифтам та роботі з ком'ютерними програмами для подальшого розвитку у галузі дизайну.</p>
-                    <a href="#">Докладніше + реєстрація</a>
-                </li>
-                <li>
-                    <img src="<? bloginfo('template_url'); ?>/images/icon-gamedesign.png" />
-                    <a class="title" href="#"><h3>Game Production</h3></a>
-                    <p>Часи, коли ігри створювали фанатики-одинаки давно позаду. Сьогодні шалено зростаюча індустрія геймдеву відкриває двері широкому колу спеціалістів. Курс Game Production познайомить учнів із процессом створення комп’ютерних ігр, особливостями ведення GDD, допоможе розібратися з ігровими механіками, жанрами, тенденціями, термінологією... А ще, надихне спостерігати, помічати, пробувати, вивчати життя, бо, як не дивно, часто саме це визначає якісний геймдев :)</p>
-                    <a href="#">Докладніше + реєстрація</a>
-                </li>
-                <li>
-                </li>
+            <? endwhile; ?>
             </ul>
+        <? else : endif; wp_reset_query(); ?>
 
             <? get_sidebar(); ?>
         </div>

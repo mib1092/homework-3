@@ -13,7 +13,7 @@ Template Name: About
                     <? the_title('<h2>', '</h2>'); ?>
                     <ul>
                         <li class="imgs"><? if (has_post_thumbnail() ) { the_post_thumbnail(); } ?></li>
-                        <?php remove_filter ('the_content', 'wpautop'); the_content(); ?>
+                        <? remove_filter ('the_content', 'wpautop'); the_content(); ?>
                     </ul>
 
                 <? endwhile; ?>

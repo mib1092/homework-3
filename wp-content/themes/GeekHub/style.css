@@ -61,7 +61,8 @@ a:hover                        { text-decoration:none; }
 body {
     background:url('images/header_bg.png') repeat-x top center #fff;
 }
-body.page {
+body.page,
+body.single {
     background:url('images/header_bg.png') repeat-x center -342px  #fff;
 }
 
@@ -105,7 +106,8 @@ body span.line
     overflow:hidden;
     height:450px;
 }
-.page #header {
+.page #header,
+.single #header {
     height:108px;
 }
 
@@ -236,14 +238,16 @@ body span.line
 /*----------------------------------------------------------------------------------*/
 /*-------------------------------------NAV------------------------------------------*/
 /*----------------------------------------------------------------------------------*/
-.page #header .nav {
+.page #header .nav,
+.single #header .nav {
     height:108px;
     margin:0;
 }
-.page #header .nav li a {
+.page #header .nav li a,
+.single #header .nav li a {
     padding: 48px 0 44px;
 }
-.page #header .nav li.current-menu-item a  {
+.page #header .nav li.current-menu-item a {
     min-width: 46px;
     text-align: center;
     background:url('images/inner_active.png') center bottom no-repeat;
@@ -484,11 +488,23 @@ body span.line
     float:left;
     width:295px;
     padding: 24px 5px 24px 0;
-    border-top: 1px solid #D2DCE1;
     cursor: pointer;
 }
-#content .home ul.types li.left-col{
+#content .home ul.types li:nth-child(3n+1){
+    position: relative;
     clear: both;
+}
+#content .home ul.types li:nth-child(3n+1):before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 0px;
+    width: 900px;
+    height: 1px;
+    background-color: #D2DCE1;
+}
+#content .home ul.types li:first-child:before {
+    top: 0px;
 }
 #content .home ul.types li img {
     display:block;
@@ -769,21 +785,21 @@ text-indent:-999em;
     line-height:20px;
 }
 
-#content .team ul li.odd {
+#content .team ul li:nth-child(odd) {
     text-align:right;
 }
-#content .team ul li.odd h3 {
+#content .team ul li:nth-child(odd) h3 {
     float:left;
 
 }
-#content .team ul li.odd h3 span {
+#content .team ul li:nth-child(odd) h3 span {
     display:block;
 }
-#content .team ul li.odd img {
+#content .team ul li:nth-child(odd) img {
     float:left;
     display:block;
 }
-#content .team ul li.odd p {
+#content .team ul li:nth-child(odd) p {
     /*float:left;*/
     overflow:hidden;
     text-align:left;
@@ -1199,9 +1215,9 @@ text-indent:-999em;
     cursor: pointer;
 }
 
-#content .details > ul > li {
-    display: none;
-}
+/*#content .details > ul > li {*/
+    /*display: none;*/
+/*}*/
 
 #content .details {
     overflow: hidden;
