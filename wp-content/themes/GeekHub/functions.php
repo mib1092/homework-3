@@ -9,7 +9,7 @@ function load_style_script(){
     wp_enqueue_script('jquery-1.6.4.min', get_template_directory_uri() . '/js/jquery-1.6.4.min.js' );
     wp_enqueue_script('prefixfree.min', get_template_directory_uri() . '/js/libs/prefixfree.min.js' );
 //    wp_enqueue_script('flipclock.min', get_template_directory_uri() . '/js/flipclock.min.js' );
-    wp_enqueue_script('scripts', get_template_directory_uri() . '/js/scripts.js' );
+    wp_enqueue_script('mainJS', get_template_directory_uri() . '/js/mainJS.js' );
     wp_enqueue_script('openapi', '//vk.com/js/api/openapi.js?115' );
     wp_enqueue_script('maps.googleapis', '//maps.googleapis.com/maps/api/js?sensor=true' );
 }
