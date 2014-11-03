@@ -12,11 +12,14 @@
         if ( $courses->have_posts()) : ?>
             <h2>ДЕТАЛІ КУРСІВ ТА РЕЄСТРАЦІЯ</h2>
             <ul class="types">
-            <? while ( $courses->have_posts() ) : $courses->the_post(); ?>
+            <? while ( $courses->have_posts() ) : $courses->the_post();
+            $directions = get_the_terms( $post->ID, 'educational-direction' );
+            if ( !empty( $directions ) ){
+                $direction = array_shift( $directions ); } ?>
                 <li>
                     <? if (has_post_thumbnail() ) { the_post_thumbnail(); } ?>
                     <a class="title" href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
-                    <? the_excerpt(); ?>
+                    <p><? echo $direction->description; ?></p>
                     <a href="<?php the_permalink(); ?>">Докладніше + реєстрація</a>
                 </li>
             <? endwhile; ?>

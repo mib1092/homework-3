@@ -1,4 +1,7 @@
-<? $course = get_the_title(); ?>
+<? $directions = get_the_terms( $post->ID, 'educational-direction' );
+    if ( !empty( $directions ) ){
+        $direction = array_shift( $directions );
+    } ?>
 <? get_header(); ?>
 
     <div id="content">
@@ -19,7 +22,7 @@
                         array(
                             'taxonomy' => 'educational-direction',
                             'field' => 'slug',
-                            'terms' => $course
+                            'terms' => $direction->slug
                         )
                     ),
                     'posts_per_page' => -1,
