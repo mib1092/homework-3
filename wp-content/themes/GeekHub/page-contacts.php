@@ -38,7 +38,7 @@ Template Name: Contacts
                         <dd class="email">
                             <? bloginfo('admin_email'); ?>
                         </dd>
-                        <dd>Перед тим як писати, ознайомтесь <br>із <a href="/faq" >сторінкою ПОПУЛЯРНИХ ПИТАНЬ</a></dd>
+                        <dd><? remove_filter ('the_content', 'wpautop'); the_content(); ?></dd>
                     </dl>
 
                 <? endwhile; ?>

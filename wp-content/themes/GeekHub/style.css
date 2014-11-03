@@ -112,9 +112,10 @@ body span.line
 }
 
 #header h1 {
-	position:absolute; top:19px; left:0px;
-	width:167px;
-	height:71px;
+    float: left;
+    width: 167px;
+    height: 71px;
+    margin-top: 19px;
 }
 #header h1 a {
 	display:block;
@@ -273,19 +274,21 @@ body span.line
     color:#396375;
     text-transform:uppercase;
 }
-#header .nav li a.current-menu-item,
 #header .nav li.current-menu-item a,
-#header .nav li a:hover {
+#header .nav li a:hover,
+#wrap #footer li .nav li.current-menu-item a,
+#wrap #footer li .nav li a:hover {
     color:#e21d5d;
 }
 #header .links {
-	overflow:hidden;
-    float:right;
+    overflow: hidden;
     height:42px;
-	margin:35px -8px 0 0;
+	margin:35px 0 0 0;
+    padding-left: 26px;
+    text-align: center;
 }
 #header .links li {
-	float:left;
+    display: inline-table;
     width:24px;
     height:42px;
 	padding: 0 4px;
@@ -295,7 +298,7 @@ body span.line
     width:24px;
     height:42px;
     color:#396375;
-    text-indent:-400px;
+    text-indent:-9999px;
     background:url('images/icons_social.png') no-repeat;
 }
 #header .links li.fb a {
@@ -314,7 +317,7 @@ body span.line
     background-position:-128px 10px;
 }
 
-#header .links li a.active,#header .links li.current-menu-item a,#header .links li a:hover {
+#header .links li a.active,#header .links li.active a,#header .links li a:hover {
     background-image:url('images/icons_social_hover.png');
 }
 

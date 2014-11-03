@@ -10,14 +10,14 @@
             <? while ( have_posts() ) : the_post(); ?>
                 <li>
                     <? if (has_post_thumbnail() ) { the_post_thumbnail(); } ?>
-                    <? the_title('<h2>', '</h2>'); ?>
+                    <? the_title('<h2 class="course-title-js">', '</h2>'); ?>
                     <? the_excerpt(); ?>
 
                 <? $lecturers = new WP_Query(array(
                     'post_type' => 'lecturers',
                     'tax_query' => array(
                         array(
-                            'taxonomy' => 'lecturers-courses',
+                            'taxonomy' => 'educational-direction',
                             'field' => 'slug',
                             'terms' => $course
                         )

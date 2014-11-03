@@ -9,7 +9,9 @@ function load_style_script(){
     wp_enqueue_script('jquery-1.6.4.min', get_template_directory_uri() . '/js/jquery-1.6.4.min.js' );
     wp_enqueue_script('prefixfree.min', get_template_directory_uri() . '/js/libs/prefixfree.min.js' );
 //    wp_enqueue_script('flipclock.min', get_template_directory_uri() . '/js/flipclock.min.js' );
+    wp_enqueue_script('scripts', get_template_directory_uri() . '/js/scripts.js' );
     wp_enqueue_script('openapi', '//vk.com/js/api/openapi.js?115' );
+    wp_enqueue_script('maps.googleapis', '//maps.googleapis.com/maps/api/js?sensor=true' );
 }
 add_action('wp_enqueue_scripts', 'load_style_script');
 
@@ -253,32 +255,32 @@ add_action( 'init', 'lecturers' );
 /**
 * registration new taxonomies for post type "GeekHub team"
 **/
-function create_lecturers_taxonomies(){
-    // Добавляем НЕ древовидную таксономию 'lecturers-courses'
-    register_taxonomy( 'lecturers-courses', array('lecturers'), array(
+function create_direction_taxonomies(){
+    // Добавляем НЕ древовидную таксономию 'educational-direction'
+    register_taxonomy( 'educational-direction', array('courses', 'lecturers'), array(
         'hierarchical' => false,
         'labels' => array(
-            'name' => __( "Lecturer's Courses", 'geekhub' ),
-            'singular_name' => __( 'Courses', 'geekhub' ),
-            'search_items' =>  __( 'Search Courses', 'geekhub' ),
-            'all_items' => __( 'All Courses', 'geekhub' ),
+            'name' => __( "Educational Direction", 'geekhub' ),
+            'singular_name' => __( 'Directions', 'geekhub' ),
+            'search_items' =>  __( 'Search Directions', 'geekhub' ),
+            'all_items' => __( 'All Directions', 'geekhub' ),
             'parent_item' => null,
             'parent_item_colon' => null,
-            'edit_item' => __( 'Edit Course', 'geekhub' ),
-            'update_item' => __( 'Update Course', 'geekhub' ),
-            'add_new_item' => __( 'Add New Course', 'geekhub' ),
-            'new_item_name' => __( 'New Course Name', 'geekhub' ),
-            'separate_items_with_commas' => __( 'Separate courses with commas' ),
-            'add_or_remove_items' => __( 'Add or remove courses' ),
-            'choose_from_most_used' => __( 'Choose from the most used courses' ),
-            'menu_name' => __( 'Courses', 'geekhub' ),
+            'edit_item' => __( 'Edit Direction', 'geekhub' ),
+            'update_item' => __( 'Update Direction', 'geekhub' ),
+            'add_new_item' => __( 'Add New Direction', 'geekhub' ),
+            'new_item_name' => __( 'New Direction Name', 'geekhub' ),
+            'separate_items_with_commas' => __( 'Separate direction with commas' ),
+            'add_or_remove_items' => __( 'Add or remove direction' ),
+            'choose_from_most_used' => __( 'Choose from the most used directions' ),
+            'menu_name' => __( 'Directions', 'geekhub' ),
         ),
         'show_ui' => true,
         'query_var' => true,
-        'rewrite' => array( 'slug' => 'lecturers-courses' ),
+        'rewrite' => array( 'slug' => 'educational-direction' ),
     ));
 }
-add_action( 'init', 'create_lecturers_taxonomies', 0 );
+add_action( 'init', 'create_direction_taxonomies', 0 );
 
 
 /**

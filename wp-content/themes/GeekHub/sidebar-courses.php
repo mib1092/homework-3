@@ -8,7 +8,7 @@
 ));
 if ( $courses->have_posts()) : ?>
     <h3>НАШІ КУРСИ</h3>
-    <ul>
+    <ul class="list-courses-js">
     <? while ( $courses->have_posts() ) : $courses->the_post(); ?>
         <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
     <? endwhile; ?>
