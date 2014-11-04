@@ -1,4 +1,6 @@
 <ul class="social_share">
+
+<? if(!dynamic_sidebar('widget 1')): ?>
     <li id="vk">
         <script type="text/javascript">
             VK.Widgets.Group("vk", {mode: 0, width: "276", height: "240"}, 30111409);
@@ -7,6 +9,7 @@
     <li class="sertificates_list">
         <h4><a href="#">Сертифiкованi професiонали</a></h4>
     </li>
+<? endif; ?>
     <li>
         <h4>Наші Спонсори</h4>
         <ul>
