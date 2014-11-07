@@ -192,6 +192,48 @@ add_action( 'customize_register', 'social_links_customize_register' );
 
 
 /**
+* registration block in Customization API
+**/
+function registration_block_customize_register( $wp_customize ) {
+    class Registration_Block_Textarea_Control extends WP_Customize_Control {
+        public $type = 'textarea';
+        public function render_content() {
+            ?>
+            <label>
+                <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+                <textarea rows="3" <?php $this->link(); ?>><?php echo esc_textarea( $this->value() ); ?></textarea>
+            </label>
+        <?php
+        }
+    }
+    $wp_customize->add_section( 'reg_block_section' , array(
+        'title'      => __( 'Registration Block (Home)', 'geekhub' ),
+        'priority'   => 22,
+        'description' => __( 'Enter the registration info in header-home', 'geekhub' ),
+    ) );
+
+    $wp_customize->add_setting( 'reg_title_setting' , array(
+        'transport'   => 'refresh',
+    ) );
+    $wp_customize->add_control( new Registration_Block_Textarea_Control( $wp_customize, 'reg_title_setting', array(
+        'label'        => __( 'Enter the text', 'geekhub' ),
+        'section'    => 'reg_block_section',
+        'settings'   => 'reg_title_setting',
+    ) ) );
+
+    $wp_customize->add_setting( 'reg_note_setting' , array(
+        'transport'   => 'refresh',
+    ) );
+    $wp_customize->add_control( new Registration_Block_Textarea_Control( $wp_customize, 'reg_note_setting', array(
+        'label'        => __( 'Enter the text', 'geekhub' ),
+        'section'    => 'reg_block_section',
+        'settings'   => 'reg_note_setting',
+    ) ) );
+}
+add_action( 'customize_register', 'registration_block_customize_register' );
+
+
+/**
 * custom post type - Our courses
 **/
 function courses() {

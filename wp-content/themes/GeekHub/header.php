@@ -163,9 +163,12 @@
 
     <? if (is_home()) { ?>
         <span class="line"></span>
-
-        <h4 class="registration">Реєстрацію на 4й сезон закрито</h4>
-        <p class="note">*залиште нам ваш емейл і ми повідомимо вас про початок реєстрації</p>
+    <? $href = get_theme_mod( 'fb_setting' ); if ($href) {?>
+        <h4 class="registration"><? echo get_theme_mod( 'reg_title_setting' ); ?></h4>
+    <? }
+    $href = get_theme_mod( 'vk_setting' ); if ($href) {?>
+        <p class="note"><? echo get_theme_mod( 'reg_note_setting' ); ?></p>
+    <? } ?>
         <form action="#">
             <fieldset>
                 <span></span>
