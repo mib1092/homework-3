@@ -159,7 +159,7 @@ body span.line
     position:relative;
    	z-index:2;
     padding: 46px 0 25px;
-	font-family: "Trebuchet MS";
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     font-weight:normal;
     font-size:45px;
     line-height: 62px;
@@ -170,7 +170,7 @@ body span.line
     position:relative;
    	z-index:2;
     padding: 0 0 25px;
-    font-family: "Trebuchet MS";
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     font-weight:normal;
     font-size:25px;
 	color:#246685;
@@ -217,7 +217,7 @@ body span.line
     width: 217px;
     height: 46px;
     margin: 0 10px 0 0;
-    font-family: "Trebuchet MS";
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     font-weight:normal;
     font-size:18px;
     text-align: center;
@@ -232,7 +232,7 @@ body span.line
     background:url('images/register_submit.png') center bottom no-repeat;
     color: #fff;
     text-align: center;
-    font-family: "Trebuchet MS";
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     font-weight:normal;
     font-size:18px;
 }
@@ -269,7 +269,7 @@ body span.line
     height:16px;
 	padding:14px 0 10px;
 	font-weight:bold;
-    font-family: "Trebuchet MS";
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     font-size:14px;
     color:#396375;
     text-transform:uppercase;
@@ -355,7 +355,7 @@ body span.line
 }
 
 #header #features h4,#header #features h4 a {
-    font-family: "Trebuchet MS";
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     color:#4c7689;
     font-size:42px;
     font-weight:normal;
@@ -450,7 +450,7 @@ body span.line
     height:12px;
     font-size:10px;
 	font-weight:bold;
-    font-family: "Trebuchet MS";
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     color:#396375;
     text-transform:uppercase;
 }
@@ -459,7 +459,7 @@ body span.line
 /*----------------------------------------------------------------------------------*/
 #content .home h2 {
     text-align:center;
-    font-family: "Trebuchet MS";
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     font-weight:normal;
     font-size:14px;
     line-height:18px;
@@ -515,7 +515,7 @@ body span.line
     margin:0 15px 0 0;
 }
 #content .home ul.types li h3 {
-    font-family: "Trebuchet MS";
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     font-weight:normal;
     font-size:27px;
     line-height:27px;
@@ -550,7 +550,7 @@ body span.line
 }
 #content .home ul.social_share > li h4 {
     text-align:center;
-    font-family: "Trebuchet MS";
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     font-weight:normal;
     font-size:14px;
     line-height:14px;
@@ -736,7 +736,7 @@ text-indent:-999em;
     text-decoration:underline;
 }
 #content .team h2 {
-    font-family: "Trebuchet MS";
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     font-weight:normal;
     font-size:50px;
     line-height:50px;
@@ -758,7 +758,7 @@ text-indent:-999em;
     float:right;
     width:185px;
     padding: 37px 0 7px;
-    font-family: "Trebuchet MS";
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     font-weight:normal;
     font-size:25px;
     line-height:29px;
@@ -813,7 +813,7 @@ text-indent:-999em;
 /*-------------------------------------CONTACTS----------------------------------------*/
 /*----------------------------------------------------------------------------------*/
 #content .contacts h2 {
-    font-family: "Trebuchet MS";
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     font-weight:normal;
     font-size:50px;
     line-height:50px;
@@ -914,7 +914,7 @@ text-indent:-999em;
     line-height:20px;}
 
 #content .about h2 {
-    font-family: "Trebuchet MS";
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     font-weight:normal;
     font-size:50px;
     line-height:50px;
@@ -924,7 +924,7 @@ text-indent:-999em;
 }
 
 #content .about h3 {
-    font-family: "Trebuchet MS";
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     font-weight:normal;
     font-size:29px;
     line-height:29px;
@@ -972,7 +972,7 @@ text-indent:-999em;
 /*-------------------------------------REGISTER-------------------------------------*/
 /*----------------------------------------------------------------------------------*/
 #content .register h2 {
-    font-family: "Trebuchet MS";
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     font-weight:normal;
     font-size:50px;
     line-height:50px;
@@ -982,7 +982,7 @@ text-indent:-999em;
 }
 
 #content .register h3 {
-    font-family: "Trebuchet MS";
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     font-weight:normal;
     font-size:29px;
     line-height:29px;
@@ -1194,7 +1194,7 @@ text-indent:-999em;
 }
 #content .sidebar h3 {
     text-align:center;
-    font-family: "Trebuchet MS";
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     font-weight:normal;
     font-size:14px;
     line-height:18px;
@@ -1228,7 +1228,7 @@ text-indent:-999em;
 #content .details h2 {
     padding: 0 0 18px;
     color:#EA2778;
-    font-family: "Trebuchet MS";
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     font-weight:normal;
     font-size:24px;
 }
@@ -1248,7 +1248,7 @@ text-indent:-999em;
 #content .details > ul > li  > h3 {
     clear: both;
     text-align:center;
-    font-family: "Trebuchet MS";
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     font-weight:normal;
     font-size:14px;
     line-height:18px;
@@ -1281,7 +1281,7 @@ text-indent:-999em;
 
 #content .details .team li h3 {
     padding: 24px 0 4px;
-    font-family: "Trebuchet MS";
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     font-weight:normal;
     font-size:20px;
     line-height:29px;
@@ -1304,7 +1304,7 @@ text-indent:-999em;
 #content .details .questions li {
     overflow:hidden;
     padding:0 0 20px 30px;
-    background: url(images/question-li.png) no-repeat left top;
+    background: url('images/question-li.png') no-repeat left top;
 }
 
 #content .details .register {
