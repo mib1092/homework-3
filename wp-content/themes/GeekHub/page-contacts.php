@@ -1,4 +1,4 @@
-<? get_header();
+<?php get_header();
 /*
 Template Name: Contacts
 */
@@ -6,11 +6,11 @@ Template Name: Contacts
 
     <div id="content">
 
-        <? if ( have_posts() ) : ?>
+        <?php if ( have_posts() ) : ?>
             <div class="contacts">
-                <? while ( have_posts() ) : the_post(); ?>
+                <?php while ( have_posts() ) : the_post(); ?>
 
-                    <? the_title('<h2>', '</h2>'); ?>
+                    <?php the_title('<h2>', '</h2>'); ?>
                     <dl>
                         <dt class="map">
                         <h3>Заходьте</h3>
@@ -21,31 +21,31 @@ Template Name: Contacts
                         </dt>
                         <dd>
                             <ul>
-                            <? $href = get_theme_mod( 'fb_setting' ); if ($href) {?>
-                                <li class="fb"><a href="<? echo $href ?>">facebook</a></li>
-                            <? }
+                            <?php $href = get_theme_mod( 'fb_setting' ); if ($href) {?>
+                                <li class="fb"><a href="<?php echo $href ?>">facebook</a></li>
+                            <?php }
                             $href = get_theme_mod( 'vk_setting' ); if ($href) {?>
-                                <li class="vk"><a href="<? echo $href ?>">vkontakte</a></li>
-                            <? }
+                                <li class="vk"><a href="<?php echo $href ?>">vkontakte</a></li>
+                            <?php }
                             $href = get_theme_mod( 'tw_setting' ); if ($href) {?>
-                                <li class="tw"><a href="<? echo $href ?>">twitter</a></li>
-                            <? } ?>
+                                <li class="tw"><a href="<?php echo $href ?>">twitter</a></li>
+                            <?php } ?>
                             </ul>
                         </dd>
                         <dt>
                         <h3>Пишіть</h3>
                         </dt>
                         <dd class="email">
-                            <? bloginfo('admin_email'); ?>
+                            <?php bloginfo('admin_email'); ?>
                         </dd>
-                        <dd><? remove_filter ('the_content', 'wpautop'); the_content(); ?></dd>
+                        <dd><?php remove_filter ('the_content', 'wpautop'); the_content(); ?></dd>
                     </dl>
 
-                <? endwhile; ?>
+                <?php endwhile; ?>
             </div>
-        <? else: echo "<p>Страница не найдена...</p>" ?>
-        <? endif; ?>
+        <?php else: echo "<p>Страница не найдена...</p>" ?>
+        <?php endif; ?>
 
     </div><!-- content -->
 
-<? get_footer(); ?>
+<?php get_footer(); ?>

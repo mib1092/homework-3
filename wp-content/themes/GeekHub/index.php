@@ -1,11 +1,11 @@
-<? get_header(); ?>
+<?php get_header(); ?>
 
-<? if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     <!-- post -->
-<? endwhile; ?>
+<?php endwhile; ?>
     <!-- post navigation -->
-<? else: ?>
+<?php else: ?>
     <!-- no posts found -->
-<? endif; ?>
+<?php endif; ?>
 
-<? get_footer(); ?>
+<?php get_footer(); ?>

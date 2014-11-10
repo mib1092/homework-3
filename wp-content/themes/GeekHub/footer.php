@@ -8,12 +8,12 @@
         )); ?>
     </li>
     <li>
-        &copy; Copyright <? $copyYear = 2011; $curYear = date('Y');
+        &copy; Copyright <?php $copyYear = 2011; $curYear = date('Y');
                             echo $copyYear . (($copyYear != $curYear) ? '-' . $curYear : ''); ?>
     </li>
 </ul>
 </div>
-<? wp_footer(); ?>
+<?php wp_footer(); ?>
 </body>
 
 </html>

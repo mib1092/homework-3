@@ -3,11 +3,11 @@
 
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-    <title><? is_home() ? bloginfo('description') : wp_title(''); ?></title>
+    <title><?php is_home() ? bloginfo('description') : wp_title(''); ?></title>
     <meta name="description" content="GeekHub надає можливість отримати практичні знання та навички в сфері розробки програмного забезпечення">
     <meta name="keywords" content="GeekHub, ГікХаб, Черкаси, Cherkassy">
 
-    <? wp_head(); ?>
+    <?php wp_head(); ?>
     <script type="text/javascript">
         function initialize() {
             var latlng = new google.maps.LatLng(49.42608363349172,32.09461569786072);
@@ -132,11 +132,11 @@
     <!-- /Yandex.Metrika counter -->
 </head>
 
-<body <? body_class(); ?> <? if(is_page('contacts')) : echo "onload='initialize()'"; endif; ?>>
+<body <?php body_class(); ?> <?php if(is_page('contacts')) : echo "onload='initialize()'"; endif; ?>>
 <div id="wrap">
     <div id="header">
-        <h1 style="background:url('<? echo get_theme_mod( 'logo_setting' ); ?>') no-repeat;">
-            <a href="<? echo home_url(); ?>">GeekHub</a>
+        <h1 style="background:url('<?php echo get_theme_mod( 'logo_setting' ); ?>') no-repeat;">
+            <a href="<?php echo home_url(); ?>">GeekHub</a>
         </h1>
 
         <?php wp_nav_menu(array(
@@ -147,28 +147,28 @@
         )); ?>
 
         <ul class="links">
-        <? $href = get_theme_mod( 'fb_setting' ); if ($href) {?>
-            <li class="fb"><a href="<? echo $href ?>">facebook</a></li>
-        <? }
+        <?php $href = get_theme_mod( 'fb_setting' ); if ($href) {?>
+            <li class="fb"><a href="<?php echo $href ?>">facebook</a></li>
+        <?php }
         $href = get_theme_mod( 'vk_setting' ); if ($href) {?>
-            <li class="vk"><a href="<? echo $href ?>">Вконтакте</a></li>
-        <? }
+            <li class="vk"><a href="<?php echo $href ?>">Вконтакте</a></li>
+        <?php }
         $href = get_theme_mod( 'tw_setting' ); if ($href) {?>
-            <li class="tw"><a href="<? echo $href ?>">twitter</a></li>
-        <? }
+            <li class="tw"><a href="<?php echo $href ?>">twitter</a></li>
+        <?php }
         $href = get_theme_mod( 'yt_setting' ); if ($href) {?>
-            <li class="yb"><a href="<? echo $href ?>">youtube</a></li>
-        <? } ?>
+            <li class="yb"><a href="<?php echo $href ?>">youtube</a></li>
+        <?php } ?>
         </ul>
 
-    <? if (is_home()) { ?>
+    <?php if (is_home()) { ?>
         <span class="line"></span>
-    <? $href = get_theme_mod( 'fb_setting' ); if ($href) {?>
-        <h4 class="registration"><? echo get_theme_mod( 'reg_title_setting' ); ?></h4>
-    <? }
+    <?php $href = get_theme_mod( 'fb_setting' ); if ($href) {?>
+        <h4 class="registration"><?php echo get_theme_mod( 'reg_title_setting' ); ?></h4>
+    <?php }
     $href = get_theme_mod( 'vk_setting' ); if ($href) {?>
-        <p class="note"><? echo get_theme_mod( 'reg_note_setting' ); ?></p>
-    <? } ?>
+        <p class="note"><?php echo get_theme_mod( 'reg_note_setting' ); ?></p>
+    <?php } ?>
         <form action="#">
             <fieldset>
                 <span></span>
@@ -176,6 +176,6 @@
                 <input type="submit" value="Відіслати" />
             </fieldset>
         </form>
-        <img src="<? bloginfo('template_url'); ?>/images/splash.png" alt="splash" />
-    <? } ?>
+        <img src="<?php bloginfo('template_url'); ?>/images/splash.png" alt="splash" />
+    <?php } ?>
     </div><!-- header -->

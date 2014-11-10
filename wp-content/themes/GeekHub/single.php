@@ -1,8 +1,8 @@
-<? get_header(); ?>
+<?php get_header(); ?>
 
     <div id="content">
 
-        <? if ( have_posts() ) : while ( have_posts() ) : the_post();
+        <?php if ( have_posts() ) : while ( have_posts() ) : the_post();
 
             the_title('<h2>', '</h2>');
             if (has_post_thumbnail() ) { the_post_thumbnail(); }
@@ -13,4 +13,4 @@
 
     </div><!-- content -->
 
-<? get_footer(); ?>
+<?php get_footer(); ?>

@@ -1,4 +1,4 @@
-<? get_header();
+<?php get_header();
 /*
 Template Name: About
 */
@@ -6,21 +6,21 @@ Template Name: About
 
     <div id="content">
 
-        <? if ( have_posts() ) : ?>
+        <?php if ( have_posts() ) : ?>
             <div class="about">
-                <? while ( have_posts() ) : the_post(); ?>
+                <?php while ( have_posts() ) : the_post(); ?>
 
-                    <? the_title('<h2>', '</h2>'); ?>
+                    <?php the_title('<h2>', '</h2>'); ?>
                     <ul>
-                        <li class="imgs"><? if (has_post_thumbnail() ) { the_post_thumbnail(); } ?></li>
-                        <? remove_filter ('the_content', 'wpautop'); the_content(); ?>
+                        <li class="imgs"><?php if (has_post_thumbnail() ) { the_post_thumbnail(); } ?></li>
+                        <?php remove_filter ('the_content', 'wpautop'); the_content(); ?>
                     </ul>
 
-                <? endwhile; ?>
+                <?php endwhile; ?>
             </div>
-        <? else: echo "<p>Страница не найдена...</p>" ?>
-        <? endif; ?>
+        <?php else: echo "<p>Страница не найдена...</p>" ?>
+        <?php endif; ?>
 
     </div><!-- content -->
 
-<? get_footer(); ?>
+<?php get_footer(); ?>

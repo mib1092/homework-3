@@ -1,4 +1,4 @@
-<? get_header();
+<?php get_header();
 /*
 Template Name: Team
 */
@@ -6,7 +6,7 @@ Template Name: Team
 
     <div id="content">
 
-        <? $lecturers = new WP_Query(array(
+        <?php $lecturers = new WP_Query(array(
             'post_type' => 'lecturers',
             'posts_per_page' => -1,
             'orderby' => 'ID',
@@ -14,20 +14,20 @@ Template Name: Team
         ));
         if ( $lecturers->have_posts()) : ?>
             <div class="team">
-                <? the_title('<h2>', '</h2>'); ?>
+                <?php the_title('<h2>', '</h2>'); ?>
                 <ul>
-            <? while ( $lecturers->have_posts() ) : $lecturers->the_post(); ?>
+            <?php while ( $lecturers->have_posts() ) : $lecturers->the_post(); ?>
                     <li>
-                        <h3><? the_title(); ?> <span><?php echo (get_post_meta($post->ID, 'specialization', true)); ?></span></h3>
-                        <? if (has_post_thumbnail() ) { the_post_thumbnail(); } ?>
-                        <? the_content(); ?>
+                        <h3><?php the_title(); ?> <span><?php echo (get_post_meta($post->ID, 'specialization', true)); ?></span></h3>
+                        <?php if (has_post_thumbnail() ) { the_post_thumbnail(); } ?>
+                        <?php the_content(); ?>
                     </li>
-            <? endwhile; ?>
+            <?php endwhile; ?>
                 </ul>
             </div>
-        <? else: echo "<p>У команді нікого немає :)</p>" ?>
-        <? endif; ?>
+        <?php else: echo "<p>У команді нікого немає :)</p>" ?>
+        <?php endif; ?>
 
     </div><!-- content -->
 
-<? get_footer(); ?>
+<?php get_footer(); ?>

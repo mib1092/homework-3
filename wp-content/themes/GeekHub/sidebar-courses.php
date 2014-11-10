@@ -1,6 +1,6 @@
 <div class="sidebar">
 
-<? $courses = new WP_Query(array(
+<?php $courses = new WP_Query(array(
     'post_type' => 'courses',
     'posts_per_page' => -1,
     'orderby' => 'ID',
@@ -9,10 +9,10 @@
 if ( $courses->have_posts()) : ?>
     <h3>НАШІ КУРСИ</h3>
     <ul class="list-courses-js">
-    <? while ( $courses->have_posts() ) : $courses->the_post(); ?>
+    <?php while ( $courses->have_posts() ) : $courses->the_post(); ?>
         <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-    <? endwhile; ?>
+    <?php endwhile; ?>
     </ul>
-<? else : endif; wp_reset_query(); ?>
+<?php else : endif; wp_reset_query(); ?>
 
 </div>
